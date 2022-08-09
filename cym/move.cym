@@ -1,0 +1,95 @@
+% test for command 'move'
+% F. Nedelec, La Foret Fouesnant, 8 August 2022
+
+set simul system
+{
+    time_step = 0.001
+    viscosity = 0.01
+    display = ( point_size=16; )
+}
+
+set space cell
+{
+    shape = sphere
+}
+
+new cell
+{
+    radius = 2
+}
+
+set hand white
+{
+    display = ( size=16; color=white; )
+}
+
+set single simplex
+{
+    hand = white
+    activity = fixed
+    stiffness = 1
+}
+
+set hand blue
+{
+    display = ( size=16; color=blue; )
+}
+
+set single dot
+{
+    hand = blue
+    activity = fixed
+    stiffness = 1
+}
+
+new 10 dot
+{
+}
+
+new simplex
+{
+    mark = 2
+}
+
+new simplex
+{
+    mark = 1
+}
+
+run 10 system { nb_frames = 1 }
+
+move all single
+{
+    position = 0 0 0
+}
+
+run 10 system { nb_frames = 1 }
+
+move all single
+{
+    translation = 1 0 0
+}
+
+run 10 system { nb_frames = 1 }
+
+move simplex
+{
+    position = 0 1 0
+}
+
+run 10 system { nb_frames = 1 }
+
+move simplex
+{
+    position = 1 1 0
+    mark = 1
+}
+
+run 10 system { nb_frames = 1 }
+
+move 1 simplex
+{
+    position = 0 0 0
+}
+
+run 10 system { nb_frames = 1 }
