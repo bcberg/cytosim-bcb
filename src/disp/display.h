@@ -34,7 +34,7 @@ class PointDisp;
 class LineDisp;
 
 /// defining the DISPLAY keyword enables display code in included files
-#define DISPLAY
+#define DISPLAY 1
 
 
 ///Base class to display Cytosim state using OpenGL
