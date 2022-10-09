@@ -809,17 +809,17 @@ real FiberSet::infoNematic(ObjectList const& objs,
         }
     }
     
-    
     if ( S == 0 )
         return 0;
-    // rescale matrix:
+    // rescale matrix, to ensure eigenvalue = 1 in perfect order
+    real beta = ( DIM >= 3 ) ? 0.5 : 1.0;
+    S = beta * DIM / S;
     for ( unsigned d = 0; d < 9; ++d )
-        M[d] = M[d] / S;
+        M[d] = M[d] * S;
     // subtract trace:
-    S = 1.0 / DIM;
-    M[0] -= S;
-    if ( DIM > 1 ) M[4] -= S;
-    if ( DIM > 2 ) M[8] -= S;
+    M[0] -= beta;
+    if ( DIM > 1 ) M[4] -= beta;
+    if ( DIM > 2 ) M[8] -= beta;
 
     int nv;
     real vec[9] = { 0 };
