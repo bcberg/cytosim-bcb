@@ -762,7 +762,7 @@ void Display3::drawSolid(Solid const& obj)
     //display a signature for each Solid
     if ( disp->style & 8 )
     {
-        char tmp[8];
+        char tmp[32];
         bodyColor(disp, obj.signature());
         snprintf(tmp, sizeof(tmp), "%u", obj.identity());
         gleDrawText(obj.posP(0), tmp, GLUT_BITMAP_HELVETICA_10);

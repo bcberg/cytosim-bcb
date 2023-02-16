@@ -250,7 +250,7 @@ void Display2::drawSolid(Solid const& obj)
     //print the number for each Solid
     if ( disp->style & 8 )
     {
-        char tmp[8];
+        char tmp[32];
         bodyColor2(disp, obj.signature());
         snprintf(tmp, sizeof(tmp), "%u", obj.identity());
         gleDrawText(obj.posP(0), tmp, GLUT_BITMAP_HELVETICA_10);
