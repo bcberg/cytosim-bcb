@@ -574,7 +574,7 @@ int SaveImage::savePNG(FILE* file, const uint8_t pixels[],
     return res;
 }
 
-#elif 1
+#elif 0
 
 //------------------------------------------------------------------------------
 #pragma mark - PNG export using libspng (https://libspng.org)
