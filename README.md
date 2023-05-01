@@ -61,7 +61,7 @@ To compile using [make](https://www.gnu.org/software/make), try:
 	
 	make
 
-If this fails, parameters of `makefile.inc` need to be updated.
+If this fails, parameters of `makefile.inc` need to be updated manually.
 Altermatively, it is possible to use [cmake](https://cmake.org) to configure `make` automatically:
 
 	mkdir build
@@ -92,8 +92,8 @@ Inspect in particular the short configuration files (e.g. fiber.cym, self.cym).
 *  Serge Dmitrieff         2013-
 *  Julio Belmonte          2014-
 *  Gaelle Letort           2014-
-*  Manuel Lera-Ramirez     2017-
-*  Maud Formanek           2020-
+*  Manuel Lera-Ramirez     2017-2022
+*  Maud Formanek           2020-2021
 
 # Contact
 
