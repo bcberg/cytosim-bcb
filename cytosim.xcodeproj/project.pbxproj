@@ -1193,7 +1193,6 @@
 		BB9B5DE215429BF400C0B9B6 /* field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = field.h; sourceTree = "<group>"; };
 		BB9B5E0C15429ED100C0B9B6 /* field.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = field.cc; sourceTree = "<group>"; };
 		BB9B6DC806AC5160004A4D10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		BB9BEB9C1C774BB30085E19F /* analyse.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = analyse.cc; sourceTree = "<group>"; };
 		BB9CED2A07E21B0F00887531 /* player.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = player.h; path = src/play/player.h; sourceTree = SOURCE_ROOT; };
 		BB9D224520C5D30200CBB0B1 /* simd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = simd.h; path = src/math/simd.h; sourceTree = SOURCE_ROOT; };
 		BB9D87A01E76BAE500DD0F00 /* test_matrix */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test_matrix; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1373,7 +1372,6 @@
 		BBE9D38C158500BA00FF944A /* space_ring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = space_ring.h; path = src/sim/spaces/space_ring.h; sourceTree = SOURCE_ROOT; };
 		BBEB846212FF339500F9D717 /* fork.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fork.cc; path = couples/fork.cc; sourceTree = "<group>"; };
 		BBEB846312FF339500F9D717 /* fork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fork.h; path = couples/fork.h; sourceTree = "<group>"; };
-		BBEEC85B16E5D891006C1C6E /* micimage.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = micimage.cc; sourceTree = "<group>"; };
 		BBEF3A85118318AE000F2EED /* backtrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = backtrace.h; sourceTree = "<group>"; };
 		BBEF3A86118318AE000F2EED /* backtrace.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = backtrace.cc; sourceTree = "<group>"; };
 		BBF0385D18BCF207002E8568 /* splash.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = splash.cc; path = src/sim/splash.cc; sourceTree = SOURCE_ROOT; };
@@ -2125,9 +2123,7 @@
 				BBA721BB1462C3B900ACF26D /* report.cc */,
 				BB30391F16FB42C700CDF586 /* reportF.cc */,
 				BB77D6FB05F12F16001C0596 /* frametool.cc */,
-				BBEEC85B16E5D891006C1C6E /* micimage.cc */,
 				BB9771601F52D98200EB8C92 /* cymart.cc */,
-				BB9BEB9C1C774BB30085E19F /* analyse.cc */,
 			);
 			name = tools;
 			path = src/tools;
