@@ -73,6 +73,15 @@ void Meca::addForce(const Mecapoint & pte, Vector const& force)
 
 
 /**
+ Add constant force to `pte`
+ */
+void Meca::addForce(const Mecable* mec, index_t inx, Vector const& force)
+{
+    force.add_to(vBAS+DIM*(inx+mec->matIndex()));
+}
+
+
+/**
 Add constant force to `pti`
  */
 void Meca::addForce(const Interpolation & pti, Vector const& force)

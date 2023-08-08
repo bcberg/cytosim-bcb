@@ -265,8 +265,8 @@ void Simul::setAllInteractions(Meca & meca) const
     Vector force(0,1,0);
     for ( Sphere * sph = spheres.first(); sph; sph = sph->next() )
     {
-        meca.addForce(Mecapoint(sph, 1), -force);
-        meca.addForce(Mecapoint(sph, 2), +force);
+        meca.addForce(sph, 1, -force);
+        meca.addForce(sph, 2, +force);
     }
 #endif
 

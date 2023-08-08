@@ -772,8 +772,8 @@ void Fiber::setInteractions(Meca & meca) const
         for ( unsigned i = 0; i < nbSegments(); ++i )
         {
             Vector f = s * dirSegment(i);
-            meca.addForce(Mecapoint(this, i  ), f);
-            meca.addForce(Mecapoint(this, i+1), f);
+            meca.addForce(this, i  , f);
+            meca.addForce(this, i+1, f);
         }
     }
 #endif
