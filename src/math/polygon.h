@@ -44,14 +44,12 @@ public:
         void write(std::ostream& os) const
         {
             const int w = (int)os.width();
-            os << "Point2D(";
-            os << " " << std::fixed << std::setw(w) << xx;
-            os << " " << std::fixed << std::setw(w) << yy;
-            os << "}";
+            os << " P2{ " << std::fixed << std::setw(w) << xx;
+            os << " " << std::fixed << std::setw(w) << yy << "}";
         }
      };
     
-    /// list of points. The array is allocated to hold index = 1+npts_
+    /// list of points. The array is allocated to hold index = 2+npts_
     Point2D* pts_;
     
     /// number of points
@@ -69,61 +67,61 @@ public:
     unsigned nbPoints() const { return npts_; }
     
     /// set number of points and allocate memory
-    void     allocate(unsigned s);
+    void allocate(unsigned s);
+    
+    /// copy first two points to end of list
+    void wrap();
     
     /// set as regular polygon with `ord` sides (4 : square)
-    void     set(unsigned ord, real radius, real angle = 0);
+    void set(unsigned ord, real radius, real angle = 0);
 
     /// return copy of point at index `inx`
-    Point2D  point(unsigned inx) { assert_true( inx < npts_ ); return pts_[inx]; }
+    Point2D point(unsigned inx) { assert_true( inx < npts_ ); return pts_[inx]; }
 
     /// set coordinates of point at index `inx`:
-    void     setPoint(unsigned inx, real x, real y, long c = 0);
+    void setPoint(unsigned inx, real x, real y, long c = 0);
     
     /// subfunction
     static unsigned read(std::istream&, Point2D *pts, unsigned pts_size);
     
     /// read polygon from stream
-    void     read(std::istream&);
+    void read(std::istream&);
     
     /// read polygon from file
-    void     read(std::string const&);
+    void read(std::string const&);
     
     /// write a polygon to stream
-    void     write(std::ostream&) const;
+    void write(std::ostream&) const;
 
     /// flip the order of the points
-    void     flip();
+    void flip();
     
-    /// move all points by given amount
-    void     translate(real dx, real dy);
-    
-    /// scale all points by given factors in X and Y
-    void     scale(real sx, real sy);
+    /// move all points by given amount and scale
+    void transform(real dx, real dy, real sx, real sy);
     
     /// move all segments sideways, to uniformly increase the surface of polygon
-    void     inflate(real eps);
+    void inflate(real eps);
     
     /// calculate the offsets necessary for the other functions. Return 0 if OK
-    int      complete(real epsilon);
+    int complete(real epsilon);
     
     /// tell if a point is inside a polygon
-    int      inside(real x, real y, int edge, real threshold = REAL_EPSILON) const;
+    int inside(real x, real y, int edge, real threshold = REAL_EPSILON) const;
     
     /// calculate the projection (pX, pY) of the point (x,y) on a polygon
-    int      project(real x, real y, real& pX, real& pY, int& hit) const;
+    int project(real x, real y, real& pX, real& pY, int& hit) const;
     
     /// calculate the bounding box [xmin, xmax, ymin, ymax] of a polygon
-    void     find_extremes(real box[4]) const;
+    void find_extremes(real box[4]) const;
     
     /// calculate the surface of a polygon
-    real     surface() const;
+    real surface() const;
     
     /// printout
-    void     dump(std::ostream&) const;
+    void dump(std::ostream&) const;
     
     /// printout
-    void     print(FILE*) const;
+    void print(FILE*) const;
 };
 
 #endif

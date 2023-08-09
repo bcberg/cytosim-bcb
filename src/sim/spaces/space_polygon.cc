@@ -69,7 +69,7 @@ void SpacePolygon::resize(Glossary& opt)
 
     real x;
     if ( opt.set(x, "scale") )
-        poly_.scale(x, x);
+        poly_.transform(x, x, 0, 0);
 
     if ( opt.set(x, "inflate") )
         poly_.inflate(x);

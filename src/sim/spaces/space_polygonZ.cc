@@ -30,7 +30,7 @@ void SpacePolygonZ::resize(Glossary& opt)
 #if ( DIM > 2 )
     Vector vec;
     if ( opt.set(vec, "translate") )
-        poly_.translate(vec.XX, vec.YY);
+        poly_.transform(1.0, 1.0, vec.XX, vec.YY);
 
     real len;
     if ( opt.set(len, "inflate") && len > 0 )
