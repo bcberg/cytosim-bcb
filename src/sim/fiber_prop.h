@@ -19,6 +19,7 @@ class Space;
 /// compile switches to enable advanced features:
 #define OLD_SQUEEZE_FORCE       0
 #define NEW_COLINEAR_FORCE      0
+#define NEW_END_FORCE           1
 #define NEW_FIBER_CHEW          0
 #define NEW_FIBER_LOOP          0
 
@@ -238,6 +239,17 @@ public:
      .
      */
     real         colinear_force;
+#endif
+
+#if NEW_END_FORCE
+    /* Brady Berg, 10/26/2023*/
+    /// a force applied to the end of the fiber
+    /**
+     This has unit of force:
+     - Direction, magnitude specified using vector input
+     .
+     */
+    Vector         end_force;
 #endif
 #if NEW_FIBER_CHEW
     /// maximum speed of disassembly due to chewing (speed)
