@@ -289,7 +289,7 @@ void FiberProp::clear()
 #endif
 #if NEW_END_FORCE
     /* Brady Berg, 10/26/2023 */
-    end_force.clear();
+    end_force           = Vector2(0.0,0.0);
 #endif
 #if NEW_FIBER_CHEW
     max_chewing_speed   = 0;
