@@ -7,6 +7,7 @@
 #include "property.h"
 #include "common.h"
 #include "sim.h"
+#include "vector.h"
 
 class Field;
 class Fiber;
