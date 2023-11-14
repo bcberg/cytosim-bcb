@@ -247,7 +247,7 @@ public:
     /// a force applied to the end of the fiber
     /**
      This has unit of force:
-     - Direction, magnitude specified using vector input
+     - Direction, magnitude specified using vector input (set of space-separated values)
      .
      */
     Vector         end_force;
