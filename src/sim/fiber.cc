@@ -788,7 +788,7 @@ void Fiber::setInteractions(Meca & meca) const
         // Mecapoint(this, lastPoint()) designates the plus end
         // Mecapoint(this, 0) designates the minus end
         meca.addForce(Mecapoint(this, lastPoint()), prop->end_force);
-        std::clog << "applying force to " << reference() << " = " << prop->end_force << "\n";
+        // std::clog << "applying force to " << reference() << " = " << prop->end_force << "\n";
     }
 #endif
     
