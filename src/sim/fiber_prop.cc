@@ -287,9 +287,13 @@ void FiberProp::clear()
 #if NEW_COLINEAR_FORCE
     colinear_force      = 0;
 #endif
-#if NEW_END_FORCE
-    /* Brady Berg, 10/26/2023 */
-    end_force           = Vector2(0.0,0.0);
+#if NEW_PLUS_END_FORCE
+    /* Brady Berg, 09/25/2024 */
+    plus_end_force      = Vector2(0.0,0.0);
+#endif
+#if NEW_MINUS_END_FORCE
+    /* Brady Berg, 09/25/2024 */
+    minus_end_force     = Vector2(0.0,0.0);
 #endif
 #if NEW_FIBER_CHEW
     max_chewing_speed   = 0;
@@ -396,9 +400,13 @@ void FiberProp::read(Glossary& glos)
 #if NEW_COLINEAR_FORCE
     glos.set(colinear_force,    "colinear_force");
 #endif
-#if NEW_END_FORCE
-    /* Brady Berg, 10/26/2023 */
-    glos.set(end_force,    "end_force");
+#if NEW_PLUS_END_FORCE
+    /* Brady Berg, 09/25/2024 */
+    glos.set(plus_end_force,    "plus_end_force");
+#endif
+#if NEW_MINUS_END_FORCE
+    /* Brady Berg, 09/25/2024 */
+    glos.set(plus_end_force,    "plus_end_force");
 #endif
 #if NEW_FIBER_CHEW
     glos.set(max_chewing_speed, "max_chewing_speed");
@@ -539,9 +547,13 @@ void FiberProp::write_values(std::ostream& os) const
 #if NEW_COLINEAR_FORCE
     write_value(os, "colinear_force",      colinear_force);
 #endif
-#if NEW_END_FORCE
-    /* Brady Berg, 10/26/2023 */
-    write_value(os, "end_force",      end_force);
+#if NEW_PLUS_END_FORCE
+    /* Brady Berg, 09/25/2024 */
+    write_value(os, "plus_end_force",      plus_end_force);
+#endif
+#if NEW_MINUS_END_FORCE
+    /* Brady Berg, 09/25/2024 */
+    write_value(os, "minus_end_force",      minus_end_force);
 #endif
 #if NEW_FIBER_CHEW
     write_value(os, "max_chewing_speed",   max_chewing_speed);

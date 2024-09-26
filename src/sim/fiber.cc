@@ -778,17 +778,28 @@ void Fiber::setInteractions(Meca & meca) const
     }
 #endif
 
-#if NEW_END_FORCE
+#if NEW_PLUS_END_FORCE
     /*
-     Brady Berg, 10/26/2023
-     Add a force acting on the end of the filament.
+     Brady Berg, 09/25/2024
+     Add a force acting on the PLUS end of the filament.
      */
-    if ( prop->end_force )
+    if ( prop->plus_end_force )
     {
         // Mecapoint(this, lastPoint()) designates the plus end
+        meca.addForce(Mecapoint(this, lastPoint()), prop->plus_end_force);
+        // std::clog << "applying force to " << reference() << " = " << prop->plus_end_force << "\n";
+    }
+#endif
+#if NEW_MINUS_END_FORCE
+    /*
+     Brady Berg, 09/25/2024
+     Add a force acting on the MINUS end of the filament.
+     */
+    if ( prop->minus_end_force )
+    {
         // Mecapoint(this, 0) designates the minus end
-        meca.addForce(Mecapoint(this, lastPoint()), prop->end_force);
-        // std::clog << "applying force to " << reference() << " = " << prop->end_force << "\n";
+        meca.addForce(Mecapoint(this, 0), prop->minus_end_force);
+        // std::clog << "applying force to " << reference() << " = " << prop->minus_end_force << "\n";
     }
 #endif
     
