@@ -46,7 +46,11 @@ endif()
 
 # static linking preferred here:
 find_package(BLAS)
-find_library(BLAS_LIB libblas.a blas BLAS_LIBRARIES PATHS ~/lib REQUIRED)
+if(BLAS_FOUND)
+    #NOTE: needed to manually set this variable for OpenBLAS compatibility
+    SET(BLAS_INCLUDE_DIRS $ENV{OpenBLAS__CPPFLAGS})
+endif(BLAS_FOUND)
+find_library(BLAS_LIB libblas.a blas BLAS_LIBRARIES libopenblas.a PATHS ~/lib /opt/apps/OpenBLAS/0.3.26/lib REQUIRED)
 if(BLAS_LIB)
     message(">>>>>> BLAS: ${BLAS_LIB}")
 else()
@@ -54,7 +58,7 @@ else()
 endif()
 
 find_package(LAPACK)
-find_library(LAPACK_LIB liblapack.a lapack LAPACK_LIBRARIES PATHS ~/lib REQUIRED)
+find_library(LAPACK_LIB liblapack.a lapack LAPACK_LIBRARIES PATHS ~/lib /opt/apps/lapack/3.9.0/lib REQUIRED)
 if(LAPACK_LIB)
     message(">>>>>> LAPACK: ${LAPACK_LIB}")
 else()

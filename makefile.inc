@@ -35,7 +35,7 @@ HAS_MKL := 0
 #     1 : macports installation
 #     2 : Homebrew installation
 
-HAS_PNG := 2
+HAS_PNG := 0
 
 #-------------------------------------------------------------------------------
 #---------------------------  Platform Detection  ------------------------------
