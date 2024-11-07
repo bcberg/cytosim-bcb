@@ -16,6 +16,7 @@
 #include <cstdio>
 #include <sys/types.h>
 #include <string>
+#include <cstdint>
 
 
 /// A wrapper around a C-file
