@@ -405,8 +405,8 @@ void FiberProp::read(Glossary& glos)
     glos.set(plus_end_force,    "plus_end_force");
 #endif
 #if NEW_MINUS_END_FORCE
-    /* Brady Berg, 09/25/2024 */
-    glos.set(plus_end_force,    "plus_end_force");
+    /* Brady Berg, 11/06/2024 */
+    glos.set(minus_end_force,    "minus_end_force");
 #endif
 #if NEW_FIBER_CHEW
     glos.set(max_chewing_speed, "max_chewing_speed");
